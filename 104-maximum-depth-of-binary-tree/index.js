@@ -19,13 +19,13 @@ var maxDepth = function (root) {
   let maxDepth = -Infinity;
 
   while (queue.length > 0) {
-    const item = queue.pop();
+    const item = queue.shift();
     if (!item) continue;
     const { node, depth } = item;
-    maxDepth = Math.max(depth);
+    maxDepth = Math.max(depth, maxDepth);
 
-    if (node?.right) queue.push({ node: node.right, depth: depth + 1 });
     if (node?.left) queue.push({ node: node.left, depth: depth + 1 });
+    if (node?.right) queue.push({ node: node.right, depth: depth + 1 });
   }
   return maxDepth;
 };
