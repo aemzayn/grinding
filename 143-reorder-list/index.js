@@ -1,9 +1,4 @@
-class ListNode {
-  constructor(val, next = null) {
-    this.val = val;
-    this.next = next;
-  }
-}
+const { printList, ListNode } = require("../ListNode");
 
 const l4 = new ListNode(4);
 const l3 = new ListNode(3, l4);
@@ -51,14 +46,6 @@ var reorderList = function (head) {
   }
 
   return head;
-};
-
-const printList = (head) => {
-  let curr = head;
-  while (curr) {
-    console.log(curr.val);
-    curr = curr.next;
-  }
 };
 
 printList(reorderList(l1));
