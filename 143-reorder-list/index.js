@@ -5,15 +5,15 @@ class ListNode {
   }
 }
 
-const l1 = new ListNode(1);
-const l2 = new ListNode(2, l1);
-const l3 = new ListNode(3, l2);
-const l4 = new ListNode(4, l3);
+const l4 = new ListNode(4);
+const l3 = new ListNode(3, l4);
+const l2 = new ListNode(2, l3);
+const l1 = new ListNode(1, l2);
 
 var reorderList = function (head) {
   // reorder list
-  // 1 -> 2 -> 3 -> 4 -> 5
-  // 1 -> 5 -> 2 -> 4 -> 3
+  // 1 -> 2 -> 3 -> 4
+  // 1 -> 4 -> 2 -> 3
 
   // find middle node
   let slow = head;
@@ -23,7 +23,11 @@ var reorderList = function (head) {
     fast = fast.next.next;
   }
 
+  // half = 3
+  // second half = 3 -> 4
+
   // reverse second half
+  // 4 -> 3
   let prev = null;
   let curr = slow;
   while (curr) {
@@ -48,3 +52,13 @@ var reorderList = function (head) {
 
   return head;
 };
+
+const printList = (head) => {
+  let curr = head;
+  while (curr) {
+    console.log(curr.val);
+    curr = curr.next;
+  }
+};
+
+printList(reorderList(l1));
