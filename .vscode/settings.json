@@ -2,6 +2,20 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
   },
-  "python.formatting.provider": "none",
-  "github.copilot.editor.enableAutoCompletions": false
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "go": true,
+    "javascript": false,
+    "dockerfile": true,
+    "typescript": true,
+    "python": true,
+    "scss": true,
+    "prisma": true,
+    "typescriptreact": true,
+    "rust": false
+  }
 }
